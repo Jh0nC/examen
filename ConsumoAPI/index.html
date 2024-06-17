@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .for-category {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+<body class="bg-secondary">
+  <div class="container-fluid p-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 bg-light shadow border border-3 border rounded-4 px-2 py-4">
+        <form action="" class="">
+          <h3 class="text-center">Registro de pago en peaje</h3>
+          <hr class="mx-4">
+          <div class="row text-center d-flex justify-content-center">
+            <a class="btn btn-secondary shadow w-auto" href="#records">Ver registros</a>
+          </div>
+          <hr class="mx-4">
+          <div class="row text-center d-flex justify-content-center">
+            <h6>Peaje</h6>
+            <span class="text-body-tertiary">Selecciona el peaje que en el que pagaras.</span>
+            <div class="col-8 border m-2 p-2 rounded shadow">
+              <select name="tollbox" id="tollbox-input" class="form-select">
+                <option selected>...</option>
+              </select>
+            </div>
+          </div>
+          <hr class="mx-4 mt-2">
+          <div class="row text-center d-flex justify-content-center">
+            <div class="col-6 px-3">
+              <label for="" class="form-label w-100">
+                Categoría
+                <select name="category" id="category-tollbox-input" class="form-select shadow for-category">
+                  <option selected>...</option>
+                  <option value="I">I</option>
+                  <option value="II">II</option>
+                  <option value="III">III</option>
+                  <option value="IV">IV</option>
+                  <option value="V">V</option>
+                </select>
+              </label>
+            </div>
+            <div class="col-6 px-3">
+              <label for="" class="form-label w-100">
+                Placa
+                <input id="plate-input" type="text" class="form-control shadow">
+              </label>
+            </div>
+          </div>
+          <hr class="mx-4 mt-2">
+          <div class="row text-center d-flex justify-content-center">
+            <div class="col-6">
+              <label for="" class="form-label">
+                Precio
+                <input type="text" id="toll-price-input" placeholder="$00,00" class="form-control shadow" disabled>
+              </label>
+            </div>
+          </div>
+          <hr class="mx-4 mt-2">
+          <div class="row text-center d-flex justify-content-center">
+            <button class="btn btn-outline-primary w-auto shadow" id="create-btn" onclick="createPago()">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid p-5 mt-5" id="records">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 bg-light shadow border border-3 border rounded-4 p-4">
+        <h3 class="text-start w-auto">Registros</h3>
+        <hr>
+        <table class="table table-striped w-100">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Peaje</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Fecha Registro</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-records">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="modals"></div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
